@@ -4,32 +4,6 @@ var areaWrap = document.querySelector('.areaWrap');
 var hotTag = document.querySelector('.hotTag');
 var dataLen = data.result.records.length;
 
-hotTag.addEventListener('click',function(e){
-    if(e.target.tagName !== 'LI'){return};
-    var getData = [];
-    //取得點擊的 data 資料
-    for (var i = 0; i < dataLen; i++) {
-        if (e.target.textContent == data.result.records[i].Zone){
-            getData.push(data.result.records[i]);
-        }
-    }
-    var areaInfoLi = '';
-    for (var i = 0; i < getData.length; i++) {
-        //取出所有內容顯示在 areaWrap
-        var infoName = getData[i].Name;
-        var infoOpentime = getData[i].Opentime;
-        var infoAdd = getData[i].Add;
-        var infoTel = getData[i].Tel;
-        var infoTicketinfo = getData[i].Ticketinfo;
-        var infoPicture1 = getData[i].Picture1;
-
-        //放入 areaWrap 內容
-        var content = '<li data-num=' + i + ' class="areaInfo"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4><div><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>';
-        areaInfoLi += content;
-    }
-    areaWrap.innerHTML = areaInfoLi;
-})
-
 // 初始
 function init(){
     // 取得選單資料及帶入所有內容
@@ -96,3 +70,29 @@ function selecArea(e){
     }
     areaWrap.innerHTML = areaInfoLi;
 }
+
+hotTag.addEventListener('click',function(e){
+    if(e.target.tagName !== 'LI'){return};
+    var getData = [];
+    //取得點擊的 data 資料
+    for (var i = 0; i < dataLen; i++) {
+        if (e.target.textContent == data.result.records[i].Zone){
+            getData.push(data.result.records[i]);
+        }
+    }
+    var areaInfoLi = '';
+    for (var i = 0; i < getData.length; i++) {
+        //取出所有內容顯示在 areaWrap
+        var infoName = getData[i].Name;
+        var infoOpentime = getData[i].Opentime;
+        var infoAdd = getData[i].Add;
+        var infoTel = getData[i].Tel;
+        var infoTicketinfo = getData[i].Ticketinfo;
+        var infoPicture1 = getData[i].Picture1;
+
+        //放入 areaWrap 內容
+        var content = '<li data-num=' + i + ' class="areaInfo"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4><div><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>';
+        areaInfoLi += content;
+    }
+    areaWrap.innerHTML = areaInfoLi;
+})
