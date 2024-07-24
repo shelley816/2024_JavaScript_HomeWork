@@ -2,7 +2,12 @@
 var areaList = document.querySelector('.areaList');
 var areaWrap = document.querySelector('.areaWrap');
 var hotTag = document.querySelector('.hotTag');
+var pageSelect = document.querySelector('.page-number');
 var dataRoute = data.result.records;
+
+//event
+areaList.addEventListener('change',selecArea);
+hotTag.addEventListener('click',showHotTag);
 
 function init(){
     // 初始
@@ -38,11 +43,8 @@ function selecArea(e){
     if (value == '請選擇行政區' || !value) {
         getData = dataRoute;
     } else {
-        for (var i = 0; i < dataRoute.length; i++) {
-            if (value == dataRoute[i].Zone){
-                getData.push(dataRoute[i]);
-            }
-        }
+        //過濾出 value 的陣列
+        getData = value === 'all' ? dataRoute : dataRoute.filter(item => item.Zone === value);
     }
     renderData(getData);
 }
@@ -65,9 +67,7 @@ function renderData(value){
     areaWrap.innerHTML = areaInfoLi;
 }
 
-areaList.addEventListener('change',selecArea);
-
-hotTag.addEventListener('click',function(e){
+function showHotTag(e){
     var value = e.target.innerHTML;
     var getData = [];
     if(e.target.tagName !== 'LI'){return};
@@ -77,4 +77,4 @@ hotTag.addEventListener('click',function(e){
         }
     }
     renderData(getData);
-})
+}
