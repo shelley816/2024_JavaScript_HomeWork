@@ -26,7 +26,7 @@ footer, header, hgroup, menu, nav, section {
 body {
 	line-height: 1;
 }
-ol, ul {
+ol, ul, li {
 	list-style: none;
 }
 blockquote, q {
@@ -42,12 +42,226 @@ table {
 	border-spacing: 0;
 }
 
-.showWrap li p {
-	display: inline;
-	padding: 5px;
+.top {
+	background-image: url(../img/bg_top.png);
+	background-size: cover;
+	background-position: center top;
+	height: 380px;
+	text-align: center;
+}
+.top h1 {
+	padding-top: 90px;
+	color: #ffffff;
+	font-size: 40px;
 }
 
-.showWrap li p span {
+select {
+	margin: 40px;
+	appearance: none;
+	border: solid #ffffff 3px;
+	outline: 0;
+	font: inherit;
+	width: 452px;
+	padding: .8rem 4rem .8rem 1rem;
+	background: url(../img/icons_down.png) no-repeat right 0.8em center / 1.4em, rgba(255, 255, 255, 0.7);
+	background-size: auto;
+	color: #000000;
+	border-radius: 3px;
+	cursor: pointer;
+}
+/* select::-ms-expand {
+	display: none;
+}
+select:focus {
+	display: none;
+} */
+select option {
+    color: inherit;
+    background-color: #FFFFFF;
+}
+
+.hotTagWrap {
+	position: relative;
+    top: -30px;
+	width: 800px;
+	height: 72px;
+	margin: 0 auto;
+	padding: 20px;
+	background: #FFFFFF;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+	border-radius: 5px;
+}
+
+.hotTagWrap h3 {
+	font-size: 18px;
+}
+.hotTag {
+	padding: 10px;
+}
+.hotTag li {
+	float: left;
+	font-size: 20px;
+	padding: 10px 30px;
+	margin: 0 10px;
+	border-radius: 5px;
+	color: #ffffff;
+	overflow: auto;
+	overflow:hidden;
+}
+.hotTag li:hover {
+	cursor: pointer;
+}
+.hotTag li:nth-child(1) {
+	background: #8A82CC;
+}
+.hotTag li:nth-child(2) {
+	background: #FFA782;
+}
+.hotTag li:nth-child(3) {
+	background: #e0bf09;
+}
+.hotTag li:nth-child(4) {
+	background: #559AC8;
+}
+
+.areaContainer {
+	width: 100%;
+	max-width: 1024px;
+	margin: 20px auto 0 auto;
+	box-sizing: border-box;
+	border-top: dashed #559AC8 1px;
+}
+.areaContainer::before{
+	content: '';
 	display: inline-block;
-	padding-right: 5px;
+	width: 24px;
+	height: 24px;
+	background: url(../img/down-arrow.png) center center no-repeat #ffffff;
+	position: relative;
+    top: -12px;
+    left: 50%;
+	margin-left: -12px;
+}
+.areaName {
+	font-size: 36px;
+	color: #8A82CC;
+	text-align: center;
+	margin: 30px 0;
+}
+.areaWrap {
+	display: block;
+	overflow: hidden;
+}
+.areaWrap li {
+	float: left;
+	width: 49%;
+	height: 273px;
+	box-shadow: 0 1px 3px 0 rgba(0,0,0,0.20);
+	margin-bottom: 24px;
+	position: relative;
+}
+.areaWrap > li:nth-child(odd) {
+	margin-right: 1%;
+}
+.areaWrap > li:nth-child(even) {
+	margin-left: 1%;
+}
+.areaWrap li .img {
+	display: block;
+	width: 100%;
+	height: 155px;
+	overflow: hidden;
+	position: relative;
+}
+.areaWrap li .img > img {
+	display: block;
+	width: 100%;
+	position: absolute;
+	top: -50%;
+}
+.areaWrap li .img > h4 {
+	position: absolute;
+	bottom: 0;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 30px 0 20px 20px;
+	font-size: 24px;
+	color: #FFFFFF;
+	background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+}
+.areaWrap li .content {
+	position: relative;
+	box-sizing: border-box;
+	padding: 16px 20px;
+}
+.areaWrap li .content > span {
+	position: relative;
+	margin: 0 0 14px 0;
+	font-size: 16px;
+	line-height: 20px;
+	padding-left: 26px;
+}
+.areaWrap li .content > span.time, .areaWrap li .content > span.add, .areaWrap li .content > span.tel {
+	display: block;
+}
+.areaWrap li .content > span::before {
+	content: '';
+	position: absolute;
+	margin-left: -26px;
+	width: 20px;
+	height: 20px;
+	background: url(../img/icons_clock.png) center center no-repeat;
+	background-size: cover;
+}
+
+.hide {
+	display: none;
+}
+
+.areaWrap li .content > span.infoOpentime {
+	height: 20px;
+    overflow: hidden;
+}
+.areaWrap li .content > span.add {
+	height: 20px;
+    overflow: hidden;
+}
+.areaWrap li .content > span.add::before {
+	background: url(../img/icons_pin.png) center center no-repeat;
+}
+.areaWrap li .content > span.tel::before {
+	background: url(../img/icons_phone.png) center center no-repeat;
+}
+.areaWrap li .content > span.ticket {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	padding: 16px 20px;
+}
+.areaWrap li .content > span.ticket::before {
+	background: url(../img/icons_tag.png) center center no-repeat;
+}
+
+footer {
+	display: block;
+	width: 100%;
+	font-size: 14px;
+	background: #559AC8;
+	text-align: center;
+	margin-top: 50px;
+	padding: 30px 0;
+	color: #ffffff;
+}
+footer p:nth-child(2) {
+	margin-top: 16px;
+	color: #FFD366;
+}
+
+.btn_goTop {
+	display: none;
+	position: fixed;
+	right: 20px;
+	bottom: 120px;
+	width: 24px;
+	height: 24px;
 }

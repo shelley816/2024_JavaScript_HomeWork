@@ -1,9 +1,19 @@
 // 指定 dom
 var areaList = document.querySelector('.areaList');
+var areaName = document.querySelector('.areaName');
 var areaWrap = document.querySelector('.areaWrap');
 var hotTag = document.querySelector('.hotTag');
-var pageSelect = document.querySelector('.page-number');
+var btnGoTop = document.querySelector('.btn_goTop');
 var dataRoute = data.result.records;
+
+document.addEventListener("scroll", (event) => {
+    lastKnownScrollPosition = window.scrollY;
+    if (lastKnownScrollPosition > 800){
+        btnGoTop.style.display = 'block';
+    } else if(lastKnownScrollPosition < 800){
+        btnGoTop.style.display = 'none';
+    }
+});
 
 //event
 areaList.addEventListener('change',selecArea);
@@ -30,6 +40,7 @@ function init(){
     }
 
     //載入全部資料
+    areaName.innerHTML = '所有行政區';
     renderData(dataRoute);
 }
 init();
@@ -42,9 +53,11 @@ function selecArea(e){
     //title.textContent = value;
     if (value == '請選擇行政區' || !value) {
         getData = dataRoute;
+        areaName.innerHTML = '所有行政區';
     } else {
         //過濾出 value 的陣列
         getData = value === 'all' ? dataRoute : dataRoute.filter(item => item.Zone === value);
+        areaName.innerHTML = value;
     }
     renderData(getData);
 }
@@ -60,8 +73,25 @@ function renderData(value){
         var infoTicketinfo = value[i].Ticketinfo;
         var infoPicture1 = value[i].Picture1;
 
+        //字數限制, 隱藏無內容
+        var omit = '...';
+        if (infoOpentime.length > 30){
+            infoOpentime = infoOpentime.substr(0, 30) + omit;
+        } else if (infoAdd.length > 30){
+            infoAdd = infoAdd.substr(0, 30) + omit;
+        } else if (infoTicketinfo !== ''){
+            var ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
+        } else if (infoTicketinfo === ''){
+            var ticketStr = '</span><span class="ticket hide">' + infoTicketinfo + '</span></div></li>'
+        }
+
+        if (infoTicketinfo.length > 8){
+            infoTicketinfo = '歡迎來電諮詢';
+            var ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
+        } 
+
         //放入 areaWrap 內容
-        var content = '<li data-num=' + i + ' class="areaInfo"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4><div><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>';
+        var content = '<li data-num=' + i + ' class="areaInfo"><div class="img"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4></div><div class="content"><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + ticketStr + '</div></li>';
         areaInfoLi += content;
     }
     areaWrap.innerHTML = areaInfoLi;
@@ -76,5 +106,6 @@ function showHotTag(e){
             getData.push(dataRoute[i]);
         }
     }
+    areaName.innerHTML = value;
     renderData(getData);
 }
