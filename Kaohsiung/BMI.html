@@ -4,17 +4,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/bmi.css">
 </head>
-<body>
-    <div>
-        <input class="height" type="text">
-        <input class="weight" type="text">
-        <input class="getResule" type="button" value="看結果">
-    </div>
-    <div>
+<body id="body">
+    <header>
+        <div class="container flex">
+            <div class="logo"></div>
+            <div class="txtInput">
+                <label for="height">身高 cm</label>
+                <input id="height" type="number" placeholder="請輸入身高">
+                <label for="weight">體重 kg</label>
+                <input id="weight" type="number" placeholder="請輸入體重">
+            </div>
+            <div class="resuleArea">
+                <div class="btnWrap">
+                <!-- <div class="btnWrap thin_blue"> -->
+                    <p class="txtBmi">13.6</p>
+                    <span>BMI</span>
+                    <input class="getResule" type="button" value="看結果">
+                    <!-- <input class="getResule afterPress" type="button" value=""> -->
+                </div>
+            </div>
+            <p class="txtResule_top"></p>
+        </div>
+    </header>
+    <div class="container_2">
+        <h3>BMI 紀錄</h3>
         <ul class="showWrap">
+            <!-- <li class="listInfo">
+                <p class="txtResule">嚴重消瘦</p>
+                <p class="txtBmi"><span>BMI</span>13.6</p>
+                <p class="txtWeight"><span>weight</span>40</p>
+                <p class="txtHeight"><span>height</span>163</p>
+                <p class="recordDate">7-29-2024</p>
+            </li>
+            <li>
+                <p class="txtResule">嚴重消瘦</p>
+                <p class="txtBmi"><span>BMI</span>13.6</p>
+                <p class="txtWeight"><span>weight</span>40</p>
+                <p class="txtHeight"><span>height</span>163</p>
+                <p class="recordDate">7-29-2024</p>
+            </li> -->
         </ul>
     </div>
+    <footer>
+        <div><img src="img/bmi_Logo_2.png" alt=""></div>
+    </footer>
     <script src="js/bmi.js"></script>
 </body>
 </html>
