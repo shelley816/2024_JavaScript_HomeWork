@@ -3,7 +3,18 @@ var getResule = document.querySelector('.getResule');
 var showWrap = document.querySelector('.showWrap');
 var data = JSON.parse(localStorage.getItem('listData')) || [];
 
-console.log(window)
+//footer
+var fullHeight = Math.max(
+    document.body.scrollHeight,
+    document.documentElement.scrollHeight,
+    document.body.offsetHeight,
+    document.documentElement.offsetHeight,
+    document.body.clientHeight,
+    document.documentElement.clientHeight
+);
+var conHeight = document.querySelector('.container_2');
+conHeight.style.minHeight = (fullHeight-451) + 'px';
+
 
 //監聽事件
 getResule.addEventListener('click', countBMI);
@@ -89,7 +100,6 @@ function updateList(items){
     str = '';
     var len = items.length;
     for (var i = 0; i < len; i++) {
-        // str += '<li><p>'+ newArray[i].resule +'</p><p><span>BMI</span>'+ newArray[i].bmi +'</p><p><span>weight</span>'+ newArray[i].weight +'</p><p><span>height</span>'+ newArray[i].height +'</p><p>'+ (today.getMonth()+1) +'-' + today.getDate() +'-'+ today.getFullYear() +'</p></li>';
         str += '<li class="listInfo"><p class="txtResule ' + items[i].cssStyle + '">'+ items[i].resule +'</p><p class="txtBmi"><span>BMI</span>'+ items[i].bmi +'</p><p class="txtWeight"><span>weight</span>'+ items[i].weight +'</p><p class="txtHeight"><span>height</span>'+ items[i].height +'</p><p class="recordDate">'+ (today.getMonth()+1) +'-' + today.getDate() +'-'+ today.getFullYear() +'</p></li>';
     }
     showWrap.innerHTML = str;

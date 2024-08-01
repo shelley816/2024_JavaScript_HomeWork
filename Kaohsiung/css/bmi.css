@@ -186,12 +186,11 @@ ul.showWrap li {
 }
 ul.showWrap li > p {
     display: flex;
-    width: 22%;
+    width: 21%;
     font-size: 20px;
     color: #4A4A4A;
     height: 50px;
     align-items: center;
-    justify-content: center;
 }
 ul.showWrap li > p > span {
     font-size: 12px;
@@ -201,12 +200,12 @@ ul.showWrap li > p > span {
     padding-right: 5px;
 }
 ul.showWrap li > p.txtResule {
-    width: 18%;
+    width: 23%;
     padding-left: 10px;
     justify-content: left;
 }
 ul.showWrap li > p.recordDate {
-    width: 16%;
+    width: 14%;
     font-size: 12px;
     justify-content: right;
 }
