@@ -1,0 +1,290 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, h1, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    position: relative;
+	line-height: 1;
+    height: 100%;
+    background: #eeeeee;
+}
+ol, ul, li {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+header {
+    width: 100%;
+    height: 300px;
+    background: #424242;
+}
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+}
+.container_2 {
+    width: 100%;
+    max-width: 768px;
+    margin: 0 auto;
+}
+.flex {
+    display: flex;
+}
+.container > div {
+    flex-grow: 1;
+}
+.container > div.logo {
+    width: 30%;
+    height: 100%;
+    background: url(../img/bmi_Logo.png) center center no-repeat;
+}
+.container > div.txtInput {
+    width: 35%;
+    padding-top: 55px;
+}
+.container > div.resuleArea {
+    width: 35%;
+    padding-top: 90px;
+}
+
+.txtInput > input {
+    width: 100%;
+    padding: 6px 10px;
+    margin: 8px 0;
+    display: inline-block;
+    font-size: 24px;
+    border: 2px solid #FFD366;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.2);
+    color: #FFD366;
+}
+#height {
+    margin-bottom: 20px;
+}
+input::placeholder {
+    font-size: 24px;
+    color: #9f9f9f;
+}
+label {
+    font-size: 18px;
+    color: #FFD366;
+}
+
+.resuleArea {
+    position: relative;
+}
+.btnWrap {
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    text-align: center;
+}
+.btnWrap p.txtBmi {
+    font-size: 32px;
+    margin-top: 35px;
+}
+.btnWrap > span {
+    font-size: 14px;
+    color: #86D73F;
+}
+input.getResule {
+    position: absolute;
+    top: 90px;
+    left: 50%;
+    margin-left: -60px;
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+    background-color: #FFD366;
+    font-size: 24px;
+    color: #424242;
+    border: none;
+    cursor: pointer;
+}
+input.getResule:hover {
+    box-shadow: 0 1px 6px 3px rgba(255,195,49,0.64);
+}
+input.getResule:active {
+    background: #DEA921;
+}
+input.afterPress {
+    top: 170px;
+    margin-left: 30px;
+    width: 32px;
+    height: 32px;
+    border: solid #424242 3px;
+    background: url(../img/bmi_icons_loop.png) center center no-repeat;
+}
+input.afterPress:hover {
+    box-shadow: none;
+}
+input.afterPress:active {
+    background: none;
+}
+.container > p.txtResule_top {
+    position: absolute;
+    top: 130px;
+    left: 50%;
+    margin-left: 325px;
+    font-size: 32px;
+    color: #31BAF9;
+}
+
+h3 {
+    font-size: 24px;
+    color: #424242;
+    text-align: center;
+    margin: 50px 0 30px 0;
+}
+ul.showWrap {
+    width: 100%;
+    margin-bottom: 50px;
+}
+ul.showWrap li {
+    display: flex;
+    margin: 10px 20px;
+    background: #ffffff;
+    box-sizing: border-box;
+    padding-right: 10px;
+}
+ul.showWrap li > p {
+    display: flex;
+    width: 21%;
+    font-size: 20px;
+    color: #4A4A4A;
+    height: 50px;
+    align-items: center;
+}
+ul.showWrap li > p > span {
+    font-size: 12px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding-right: 5px;
+}
+ul.showWrap li > p.txtResule {
+    width: 23%;
+    padding-left: 10px;
+    justify-content: left;
+}
+ul.showWrap li > p.recordDate {
+    width: 14%;
+    font-size: 12px;
+    justify-content: right;
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    width: 100%;
+    background: #FFD366;
+    padding: 20px 0;
+}
+
+/* 過輕 */
+.thin_blue {
+    border: 6px solid #31BAF9;
+}
+.thin_blue p.txtBmi, .thin_blue > span {
+    color: #31BAF9;
+}
+.thin_blue input.afterPress {
+    background-color: #31BAF9;
+}
+.blue {
+    border-left: solid #31BAF9 6px;
+}
+
+/* 理想 */
+.ideal_green {
+    border: 6px solid #86D73E;
+}
+.ideal_green p.txtBmi, .ideal_green > span {
+    color: #86D73E;
+}
+.ideal_green input.afterPress {
+    background-color: #86D73E;
+}
+.green {
+    border-left: solid #86D73E 6px;
+}
+
+/* 過重 */
+.heavy_lightOrange {
+    border: 6px solid #FF982D;
+}
+.heavy_lightOrange p.txtBmi, .heavy_lightOrange > span {
+    color: #FF982D;
+}
+.heavy_lightOrange input.afterPress {
+    background-color: #FF982D;
+}
+.lightOrange {
+    border-left: solid #FF982D 6px;
+}
+
+/* 輕度 中度 */
+.heavy_orange {
+    border: 6px solid #FF6C02;
+}
+.heavy_orange p.txtBmi, .heavy_orange > span {
+    color: #FF6C02;
+}
+.heavy_orange input.afterPress {
+    background-color: #FF6C02;
+}
+.orange {
+    border-left: solid #FF6C02 6px;
+}
+
+/* 重度 */
+.heavy_red {
+    border: 6px solid #FF1200;
+}
+.heavy_red p.txtBmi, .heavy_red > span {
+    color: #FF1200;
+}
+.heavy_red input.afterPress {
+    background-color: #FF1200;
+}
+.red {
+    border-left: solid #FF1200 6px;
+}
