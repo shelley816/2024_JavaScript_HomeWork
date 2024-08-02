@@ -100,7 +100,7 @@ function updateList(items){
     str = '';
     var len = items.length;
     for (var i = 0; i < len; i++) {
-        str += '<li class="listInfo"><p class="txtResule ' + items[i].cssStyle + '">'+ items[i].resule +'</p><p class="txtBmi"><span>BMI</span>'+ items[i].bmi +'</p><p class="txtWeight"><span>weight</span>'+ items[i].weight +'</p><p class="txtHeight"><span>height</span>'+ items[i].height +'</p><p class="recordDate">'+ (today.getMonth()+1) +'-' + today.getDate() +'-'+ today.getFullYear() +'</p></li>';
+        str += '<li class="listInfo"><p class="txtResule ' + items[i].cssStyle + '">'+ items[i].resule +'</p><p class="txtBmi"><span>BMI</span>'+ items[i].bmi +'</p><p class="txtWeight"><span>weight</span>'+ items[i].weight + 'kg</p><p class="txtHeight"><span>height</span>'+ items[i].height +'cm</p><p class="recordDate">'+ (today.getMonth()+1) +'-' + today.getDate() +'-'+ today.getFullYear() +'</p></li>';
     }
     showWrap.innerHTML = str;
 }
