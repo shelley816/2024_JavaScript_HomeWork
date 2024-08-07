@@ -93,7 +93,10 @@ header {
     background: rgba(255,255,255,0.2);
     color: #FFD366;
 }
-#height {
+.txtInput > span {
+    color: #ff3636;
+}
+#height, #weight {
     margin-bottom: 20px;
 }
 input::placeholder {
@@ -145,10 +148,14 @@ input.getResule:active {
     background: #DEA921;
 }
 input.afterPress {
+    display: none;
+    position: absolute;
     top: 170px;
+    left: 50%;
     margin-left: 30px;
     width: 32px;
     height: 32px;
+    border-radius: 60px;
     border: solid #424242 3px;
     background: url(../img/bmi_icons_loop.png) center center no-repeat;
 }
@@ -175,7 +182,7 @@ h3 {
 }
 ul.showWrap {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 ul.showWrap li {
     display: flex;
@@ -186,11 +193,11 @@ ul.showWrap li {
 }
 ul.showWrap li > p {
     display: flex;
-    width: 21%;
+    align-items: center;
+    width: 20%;
     font-size: 20px;
     color: #4A4A4A;
     height: 50px;
-    align-items: center;
 }
 ul.showWrap li > p > span {
     font-size: 12px;
@@ -200,14 +207,45 @@ ul.showWrap li > p > span {
     padding-right: 5px;
 }
 ul.showWrap li > p.txtResule {
-    width: 23%;
+    width: 22%;
     padding-left: 10px;
     justify-content: left;
 }
 ul.showWrap li > p.recordDate {
-    width: 14%;
+    width: 13%;
     font-size: 12px;
     justify-content: right;
+}
+ul.showWrap li >  a.delete {
+    display: flex;
+    align-items: center;
+    width: 5%;
+    background: url(../img/bmi_delete.png) right center no-repeat;
+    opacity: 0.3;
+}
+ul.showWrap li >  a.delete:hover {
+    opacity: 0.7;
+}
+
+.initText {
+    display: none;
+    text-align: center;
+    font-size: 14px;
+    color: #9f9f9f;
+}
+
+.deleteAll {
+    display: none;
+    width: 100px;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    font-size: 14px;
+    opacity: 0.3;
+}
+.deleteAll:hover {
+    opacity: 0.7;
+    cursor: pointer;
 }
 
 footer {
