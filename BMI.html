@@ -15,14 +15,15 @@
                 <input id="height" type="number" placeholder="請輸入身高">
                 <label for="weight">體重 kg</label>
                 <input id="weight" type="number" placeholder="請輸入體重">
+                <span class="remind"></span>
             </div>
             <div class="resuleArea">
                 <div class="btnWrap">
                 <!-- <div class="btnWrap thin_blue"> -->
-                    <p class="txtBmi">13.6</p>
+                    <p class="txtBmi"></p>
                     <span>BMI</span>
                     <input class="getResule" type="button" value="看結果">
-                    <!-- <input class="getResule afterPress" type="button" value=""> -->
+                    <input class="afterPress" type="button" value="">
                 </div>
             </div>
             <p class="txtResule_top"></p>
@@ -31,6 +32,8 @@
     <div class="container_2">
         <h3>BMI 紀錄</h3>
         <ul class="showWrap"></ul>
+        <p class="initText">目前沒有任何資料</p>
+        <a class="deleteAll">刪除全部資料</a>
     </div>
     <footer>
         <div><img src="img/bmi_Logo_2.png" alt=""></div>
