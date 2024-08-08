@@ -1,14 +1,14 @@
 //指定 dom
-let getResule = document.querySelector('.getResule');
-let recalculate = document.querySelector('.afterPress')
-let showWrap = document.querySelector('.showWrap');
-let textRemind = document.querySelector('.remind');
-let txtResule = document.querySelector('.txtResule_top');
-let txtHeight = document.getElementById('height');
-let txtWeight = document.getElementById('weight');
-let cssResule = document.querySelector('.btnWrap');
-let initText = document.querySelector('.initText');
-let deleteAllData = document.querySelector('.deleteAll');
+const getResule = document.querySelector('.getResule');
+const recalculate = document.querySelector('.afterPress')
+const showWrap = document.querySelector('.showWrap');
+const textRemind = document.querySelector('.remind');
+const txtResule = document.querySelector('.txtResule_top');
+const txtHeight = document.getElementById('height');
+const txtWeight = document.getElementById('weight');
+const cssResule = document.querySelector('.btnWrap');
+const initText = document.querySelector('.initText');
+const deleteAllData = document.querySelector('.deleteAll');
 let data = JSON.parse(localStorage.getItem('listData')) || [];
 
 //footer

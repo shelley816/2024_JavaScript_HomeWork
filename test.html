@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>xxx</h2>
+    <h2>aaa</h2>
+    <div class="header">xxx</div>
+    <script type="text/javascript">
+        let el = document.querySelectorAll('h2');
+        for (let i = 0; i < el.length; i++) {
+            el[i].textContent = '內容' + i;
+        }
+        console.log(el)
+    </script>
+</body>
+</html>
