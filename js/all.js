@@ -87,18 +87,18 @@ xhr.onload = function(){
             } else if (infoAdd.length > 30){
                 infoAdd = infoAdd.substr(0, 30) + omit;
             } else if (infoTicketinfo !== ''){
-                let ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
+                var ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
             } else if (infoTicketinfo === ''){
-                let ticketStr = '</span><span class="ticket hide">' + infoTicketinfo + '</span></div></li>'
+                var ticketStr = '</span><span class="ticket hide">' + infoTicketinfo + '</span></div></li>'
             }
 
             if (infoTicketinfo.length > 8){
                 infoTicketinfo = '歡迎來電諮詢';
-                let ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
+                var ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
             } 
 
             //放入 areaWrap 內容
-            let content = '<li data-num=' + i + ' class="areaInfo"><div class="img"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4></div><div class="content"><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + ticketStr + '</div></li>';
+            var content = '<li data-num=' + i + ' class="areaInfo"><div class="img"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4></div><div class="content"><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + ticketStr + '</div></li>';
             areaInfoLi += content;
         }
         areaWrap.innerHTML = areaInfoLi;
@@ -108,7 +108,7 @@ xhr.onload = function(){
         let value = e.target.innerHTML;
         let getData = [];
         if(e.target.tagName !== 'LI'){return};
-        for (var i = 0; i < dataRoute.length; i++) {
+        for (let i = 0; i < dataRoute.length; i++) {
             if (value == dataRoute[i].Zone){
                 getData.push(dataRoute[i]);
             }
