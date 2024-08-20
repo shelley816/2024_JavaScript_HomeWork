@@ -79,6 +79,7 @@ xhr.onload = function(){
             let infoTel = value[i].Tel;
             let infoTicketinfo = value[i].Ticketinfo;
             let infoPicture1 = value[i].Picture1;
+            let ticketStr = '';
 
             //字數限制, 隱藏無內容
             let omit = '...';
@@ -87,18 +88,18 @@ xhr.onload = function(){
             } else if (infoAdd.length > 30){
                 infoAdd = infoAdd.substr(0, 30) + omit;
             } else if (infoTicketinfo !== ''){
-                var ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
+                ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
             } else if (infoTicketinfo === ''){
-                var ticketStr = '</span><span class="ticket hide">' + infoTicketinfo + '</span></div></li>'
+                ticketStr = '</span><span class="ticket hide">' + infoTicketinfo + '</span></div></li>'
             }
 
             if (infoTicketinfo.length > 8){
                 infoTicketinfo = '歡迎來電諮詢';
-                var ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
+                ticketStr = '</span><span class="ticket">' + infoTicketinfo + '</span></div></li>'
             } 
 
             //放入 areaWrap 內容
-            var content = '<li data-num=' + i + ' class="areaInfo"><div class="img"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4></div><div class="content"><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + ticketStr + '</div></li>';
+            let content = '<li data-num=' + i + ' class="areaInfo"><div class="img"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4></div><div class="content"><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + ticketStr + '</div></li>';
             areaInfoLi += content;
         }
         areaWrap.innerHTML = areaInfoLi;
