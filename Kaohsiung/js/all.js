@@ -99,7 +99,7 @@ xhr.onload = function(){
             } 
 
             //放入 areaWrap 內容
-            let content = '<li data-num=' + i + ' class="areaInfo"><div class="img"><img src="' + infoPicture1 + '"><h4>' + infoName + '</h4></div><div class="content"><span class="time">' + infoOpentime + '</span><span class="add">' + infoAdd + '</span><span class="tel">' + infoTel + ticketStr + '</div></li>';
+            let content = `<li data-num=${i} class="areaInfo"><div class="img"><img src="${infoPicture1}"><h4>${infoName}</h4></div><div class="content"><span class="time">${infoOpentime}</span><span class="add">${infoAdd}</span><span class="tel">${infoTel}${ticketStr}</div></li>`;
             areaInfoLi += content;
         }
         areaWrap.innerHTML = areaInfoLi;
